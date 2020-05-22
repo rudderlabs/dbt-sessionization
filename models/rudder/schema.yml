@@ -1,0 +1,16 @@
+version: 2
+models:
+    - name: dbt_session_tracks
+      columns:
+      - name: session_id
+        tests:
+        - not_null
+      - name: dbt_visitor_id
+        tests:
+        - not_null
+
+    - name: dbt_session_duration
+      columns:
+      - name: session_duration
+        tests:
+        - not_null
