@@ -14,7 +14,7 @@ select *
           ,a2v.dbt_visitor_id
           ,t.timestamp
           ,t.event as event
-        from big-query-integration-poc.RudderAutoTrack.tracks as t
+        from {{ source("<schema>","TRACKS") }} as t
         inner join {{ ref('dbt_aliases_mapping') }} as a2v
         on a2v.alias = coalesce(t.user_id, t.anonymous_id)
         )

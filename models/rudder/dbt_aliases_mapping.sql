@@ -13,14 +13,14 @@ Typically a user would login to an application at least once while using the app
         select anonymous_id
           , user_id
           , timestamp as timestamp 
-        from big-query-integration-poc.RudderAutoTrack.tracks
+        from {{ source("<schema>","TRACKS") }}
 
         union distinct
 
         select user_id
           , null
           , timestamp 
-        from big-query-integration-poc.RudderAutoTrack.tracks
+        from {{ source("<schema>","TRACKS") }}
 
       )
 
