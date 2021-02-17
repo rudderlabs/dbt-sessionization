@@ -1,6 +1,6 @@
 # Sessionization using DBT and RudderStack
 
-This repository contains a sample DBT project for RudderStack. It can be applied on Rudder data residing in BigQuery. This DBT project creates "session" abstractions on top of RudderStack's `track` event data. The materialized DBT tables and views are used for the same.
+This repository contains a sample DBT project for RudderStack. It can be applied on the RudderStack data residing in BigQuery. This DBT project creates "session" abstractions on top of RudderStack's `track` event data. The materialized DBT tables and views are used for the same.
 
 ## Overview
 
@@ -72,3 +72,13 @@ The columns in this table are - `event_id`, `session_id`, `track_sequence_number
 represented in each record. 
 
 **Note**: A sample analysis query is provided at `analysis/dbt_top_users_by_avg_session_duration.sql`
+
+# What is RudderStack?
+
+[RudderStack](https://rudderstack.com/) is a **customer data pipeline** tool for collecting, routing and processing data from your websites, apps, cloud tools, and data warehouse.
+
+More information on RudderStack can be found [here](https://github.com/rudderlabs/rudder-server).
+
+## Contact Us
+
+If you come across any issues while configuring or using this project, please feel free to start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
