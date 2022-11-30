@@ -6,21 +6,21 @@ Typically a user would login to an application at least once while using the app
 
 */
 
-{{ config(materialized='table') }}
+
 
   with
       dbt_all_mappings as (
         select anonymous_id
           , user_id
           , timestamp as timestamp 
-        from {{ source("rudder_1","tracks") }}
+        from `rudderstack-367610`.`rudder_1`.`tracks`
 
         union distinct
 
         select user_id
           , null
           , timestamp 
-        from {{ source("rudder_1","tracks") }}
+        from `rudderstack-367610`.`rudder_1`.`tracks`
 
       )
 

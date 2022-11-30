@@ -1,8 +1,8 @@
 version: 2
 sources:
-    - name: <schema>
+    - name: "rudder_1"
       tables:
-        - name: TRACKS
+        - name: tracks
           columns:
             - name: anonymous_id
 

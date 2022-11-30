@@ -1,10 +1,19 @@
-/*
+
+  
+    
+
+    create or replace table `rudderstack-367610`.`dbt_jluiscases`.`dbt_tracks_flow`
+    
+    
+    OPTIONS()
+    as (
+      /*
 
 We leverage analytic functions like first_value and nth_value to create 5-event sequences that capture the flow of events during a session. 5 can be increased or decreased as per requirements.
 
 */
 
-{{ config(materialized='table') }}
+
 
 with derived_table as (
           select
@@ -28,7 +37,7 @@ with derived_table as (
             nth_value(event,13 IGNORE NULLS) over(partition by session_id order by track_sequence_number asc) as thirteen_event,
             nth_value(event,14 IGNORE NULLS) over(partition by session_id order by track_sequence_number asc) as fourteen_event,
             
-            from {{ ref('dbt_track_facts') }}
+            from `rudderstack-367610`.`dbt_jluiscases`.`dbt_track_facts`
         )
 
           select event_id
@@ -53,3 +62,5 @@ with derived_table as (
             
   
       from derived_table a
+    );
+  
